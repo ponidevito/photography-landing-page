@@ -1,0 +1,152 @@
+.section {
+  &__gallery {
+    background: $background;
+    padding-top: 90px;
+    padding-bottom: 123px;
+    @include lg{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @include sm{
+        padding-top: 0px;
+        padding-bottom: 35px;
+    }
+   
+  }
+}
+.gallery {
+ 
+  &__item {
+    position: relative;
+   
+  }
+
+  &__body {
+    display: flex;
+    max-width: 1015px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    @media (max-width: 1170px) {
+      margin-bottom: 100px;
+    }
+    @include md {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    @media (max-width:640px) {
+      margin-bottom: 80px;
+    }
+    @include sm{
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $colorWhite;
+    @include lg{
+        font-size: 60px;
+    }
+    @include md{
+      font-size: 50px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: $colorWhite;
+    max-width: 440px;
+    @include lg{
+        font-size: 18px;    
+    }
+    @include md{
+        max-width: 100%;
+    }
+
+  }
+}
+.swiper {
+
+
+  &__arrows {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    gap: 30px;
+    @media (max-width: 1170px) {
+      top: 100px;
+    }
+    @include md{
+      top: 125px;
+    }
+    @media (max-width:640px) {
+      top: 150px;
+    }
+    @include sm{
+      top: 160px;
+    }
+    @include xs{
+      top: 180px;
+    }
+    @media (max-width:350px) {
+      top: 200px;
+    }
+  }
+
+  &__arrow {
+    width: 64px;
+    height: 64px;
+    border: 1px solid $colorOrange;
+    border-radius: 100%;
+    background: linear-gradient(
+      142deg,
+      #ffa104 16.22%,
+      #ff7a03 54.16%,
+      #ffa104 90.11%
+    );
+
+    &.swiper-button-disabled {
+      background: transparent;
+      svg {
+        path {
+          fill: #ff7a03;
+        }
+      }
+    }
+    @include md{
+      width: 54px;
+      height: 54px;
+    }
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    @media (max-width: 1600px) {
+      max-width: 500px;
+    }
+    @media (max-width: 1500px) {
+      max-width: 400px;
+    }
+    @media (max-width: 1210px) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

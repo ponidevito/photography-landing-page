@@ -1,0 +1,213 @@
+.section {
+  &__professional {
+    background: #002733;
+
+    padding-top: 100px;
+    padding-bottom: 85px;
+    @media (max-width: 1250px) {
+      padding-bottom: 0px;
+    }
+    @include lg {
+      padding-top: 35px;
+     
+    }
+    @include xs {
+      padding-top: 0px;
+    }
+  }
+}
+.professional {
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    &:first-child {
+      z-index: 5;
+      padding-top: 185px;
+      padding-bottom: 250px;
+      max-width: 500px;
+      @include lg {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      @include md {
+        padding-bottom: 170px;
+      }
+      @include sm {
+        max-width: 100%;
+        padding-bottom: 230px;
+      }
+      @include xs {
+        padding-bottom: 160px;
+      }
+    }
+    &:last-child {
+      position: absolute;
+      right: 0;
+      z-index: 2;
+    }
+  }
+
+  &__image {
+    position: relative;
+    right: 150px;
+    padding-top: 90px;
+    @media (max-width: 1550px) {
+      right: 0;
+    }
+    @include lg {
+      padding-top: 50px;
+    }
+  }
+
+  &__image-portreit {
+    position: relative;
+    @media (max-width: 1440px) {
+      max-width: 1100px;
+    }
+    @include lg {
+      max-width: 900px;
+    }
+    @include sm {
+      opacity: 0.6;
+    }
+  }
+
+  &__circle {
+    z-index: 10;
+    position: absolute;
+    bottom: -34px;
+    left: 250px;
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat Alternates";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: $colorWhite;
+    svg {
+      animation: circle 30s infinite linear;
+      transform: rotate(20deg);
+    }
+    img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      @include xs {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    @media (max-width: 1250px) {
+      left: unset;
+      right: 20px;
+    }
+    @media (max-width: 1200px) {
+      width: 160px;
+      height: 160px;
+    }
+    @include sm {
+      width: 120px;
+      height: 120px;
+      padding: 10px;
+      bottom: -20px;
+    }
+    @include xs {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .item {
+    &__professional-title {
+      font-family: "Oswald";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: $colorWhite;
+      &:not(:last-child) {
+        margin-bottom: 60px;
+        @include sm {
+          margin-bottom: 20px;
+        }
+      }
+      @include md {
+        font-size: 48px;
+      }
+    }
+
+    &__professional-subtitle {
+      font-family: "EB Garamond";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 130%;
+      color: $colorWhite;
+      &:not(:last-child) {
+        margin-bottom: 60px;
+        @include sm {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &__professional-body {
+      display: flex;
+      gap: 50px;
+      @include xs {
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+
+    &__professional-name {
+      font-family: "Oswald";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: $colorOrange;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &__professional-subname {
+      font-family: "Oswald";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: $colorWhite;
+    }
+  }
+  .decor {
+    position: absolute;
+    top: 84px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    background-color: $colorOrange;
+    border-radius: 100%;
+    @include flex-center;
+    @include lg {
+      top: 15px;
+      right: 15px;
+    }
+    @include sm {
+      top: 30px;
+      width: 40px;
+      height: 40px;
+    }
+    img{
+      @include sm {
+          max-width: 25px;
+           }
+  }
+  }
+}

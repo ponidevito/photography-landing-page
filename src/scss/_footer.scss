@@ -1,0 +1,177 @@
+.footer {
+  &__top {
+    background: $backgroundLight;
+  }
+
+  &__row {
+    padding: 150px 0px 180px 0px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    @include lg {
+      padding: 100px 0px 100px 0px;
+    }
+    @include md {
+      // flex-wrap: wrap;
+      padding: 70px 0px 70px 0px;
+    }
+    @include sm {
+      flex-wrap: wrap;
+      row-gap: 40px;
+      padding: 50px 0px 50px 0px;
+    }
+    @include xs {
+      padding: 35px 0px 15px 0px;
+    }
+  }
+
+  &__column {
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
+      @include sm {
+        flex: 1 1 100%;
+        text-align: center;
+        align-items: center;
+      }
+    }
+    @include sm {
+      text-align: center;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__label {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $colorWhite;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      @include sm {
+        margin-bottom: 10px;
+      }
+    }
+    @include md {
+      font-size: 23px;
+    }
+  }
+
+  &__logo {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include sm {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    text-align: center;
+    color: $colorWhite;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    @include md {
+      font-size: 18px;
+    }
+  }
+
+  &__social {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 60px;
+      border: 1px solid #ffffff;
+    }
+  }
+
+  &__bottom {
+    background-color: $colorBlack;
+  }
+  &__body {
+    @include flex-center;
+  }
+  &__copy {
+    font-family: "EB Garamond";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 180%;
+    color: $colorWhite;
+    padding: 70px 0px 40px 0px;
+    @include lg {
+      padding: 40px 0px 40px 0px;
+      font-size: 20px;
+    }
+    @include sm {
+      font-size: 18px;
+      line-height: 140%;
+      padding: 25px 0px 25px 0px;
+    }
+    @include xs {
+      font-size: 16px;
+    }
+  }
+
+  .menu-footer {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+    &__link {
+      font-family: "EB Garamond";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 130%;
+      color: $colorWhite;
+      &:hover {
+        color: $colorOrange;
+        transition: 0.3s ease;
+      }
+      @include md {
+        font-size: 18px;
+      }
+    }
+  }
+  .social {
+    &__item {
+      width: 32px;
+      height: 32px;
+      background-color: $colorOrange;
+      @include flex-center;
+      img {
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}

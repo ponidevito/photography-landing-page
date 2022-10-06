@@ -1,0 +1,200 @@
+.header {
+ 
+  background: #001019;
+  &__items {
+    padding: 55px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include lg{
+      padding: 25px 0px;
+    }
+    @include xs{
+      padding: 15px 0px;
+    }
+  }
+  .menu {
+    // padding: 5px 0px;
+
+    &__icon {
+      
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 45px;
+        height: 30px;
+        cursor: pointer;
+
+        & .span,
+        &::before,
+        &::after {
+         
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          transition: all 0.3s ease 0s;
+          background: #FFFFFF;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+        }
+        &::before {
+          top: 0;
+         right: 0;
+          width: 30px;
+        }
+        &::after {
+          bottom: 0;
+          right: 0;
+          width: 20px;
+        }
+        & span {
+          top: 50%;
+          transform: scale(1) translate(0px, -50%);
+        }
+        &._active span {
+          transform: scale(0) translate(0px, -50%);
+        }
+        &._active::before {
+          top: 50%;
+          width: 30px;
+          transform: rotate(-45deg) translate(0px, -70%);
+        }
+        &._active::after {
+          bottom: 50%;
+          width: 30px;
+          transform: rotate(40deg) translate(0px, 30%);
+        }
+ 
+    }
+
+    &__body {
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      &.menu__body2{
+        display: none;
+        @media (min-width: 650px) {
+          display: flex;
+          justify-content: space-between;
+          z-index: 11;
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 30%;
+          height: 100%;
+          background-color: #0B3948;
+          padding: 100px 30px 30px 30px;
+          transform: translate(100%, 0px);
+          overflow: auto;
+          flex-direction: column;
+          justify-content: unset;
+          &._active:before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
+          &._active {
+           
+            transform: translate(0px, 0px);
+            transition: all 0.2s;
+            .menu__logo {
+              display: none;
+            }
+          }
+        }
+      }
+      @media (max-width: 650px) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0B3948;
+        padding: 100px 30px 30px 30px;
+        transform: translate(100%, 0px);
+        overflow: auto;
+        flex-direction: column;
+        justify-content: unset;
+        &._active:before {
+          content: "";
+          position: fixed;
+          width: 100%;
+          top: 0;
+          left: 0;
+        }
+        &._active {
+          z-index: 11;
+          transform: translate(0px, 0px);
+          transition: all 0.2s;
+          .menu__logo {
+            display: none;
+          }
+        }
+      }
+   
+    }
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 60px;
+      &.menu__list2{
+        @media (min-width: 650px) {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 30px;
+          gap: 40px;
+        }
+      }
+      @media (max-width: 650px) {
+        flex-direction: column;
+        align-items: center;
+        &:not(:last-child) {
+          margin-bottom: 30px;
+          gap: 40px;
+        }
+      }
+      @media (max-width: 650px) {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        gap: 40px;
+      }
+    }
+    &__link {
+      font-family: "Oswald";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: #ffffff;
+      @include lg{
+        font-size: 16px;
+      }
+      @media (max-width: 650px) {
+        font-size: 25px;
+      }
+
+      &:hover {
+        color: #FF7A03;
+        transition: 0.3s ease;
+      }
+      &._active {
+        color: #f00;
+      }
+    }
+  }
+
+  .effect {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 11;
+  }
+}
